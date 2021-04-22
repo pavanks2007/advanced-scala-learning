@@ -69,7 +69,12 @@ object LazyEvaluation extends App {
   List(1, 2, 3).withFilter(_ % 2 ==0).map(_ + 1)
 
   /*
-  Exercise: implement a lazily evaluated, singly linked STREAM of elements.
+    Exercise: implement a lazily evaluated, singly linked STREAM of elements.
+
+    naturals = MyStream.from(1)(x => x + 1) = stream of natural numbers (potentially infinite)
+    naturals.take(100).foreach(println) // lazily evaluated stream of first 100 naturals (finite stream)
+    naturals.foreach(println) // will crash - infinite!
+    naturals.map(_ * 2) // stream of all even numbers (potentially infinite)
    */
   abstract class MyStream[+A] {
     def isEmpty: Boolean
