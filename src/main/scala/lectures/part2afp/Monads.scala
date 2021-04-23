@@ -1,4 +1,4 @@
-package lectures.part2
+package lectures.part2afp
 
 object Monads extends App {
 
